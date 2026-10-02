@@ -603,6 +603,12 @@ textarea {
   min-height: 120px;
 }
 
+.form-note {
+  margin: -8px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   background: rgba(4, 24, 39, 0.8);

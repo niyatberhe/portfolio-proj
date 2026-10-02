@@ -318,20 +318,21 @@
                         </div>
                     </div>
 
-                    <form class="contact-form" action="mailto:niyattadesse2@gmail.com" method="post" enctype="text/plain">
+                    <form class="contact-form">
                         <label>
                             Name
-                            <input type="text" name="name" placeholder="Your name" />
+                            <input type="text" name="name" placeholder="Your name" required />
                         </label>
                         <label>
                             Email
-                            <input type="email" name="email" placeholder="Your email" />
+                            <input type="email" name="email" placeholder="Your email" required />
                         </label>
                         <label>
                             Message
-                            <textarea name="message" rows="4" placeholder="Hello Niyat, I'd love to connect..."></textarea>
+                            <textarea name="message" rows="4" placeholder="Hello Niyat, I'd love to connect..." required></textarea>
                         </label>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Continue in Telegram</button>
+                        <p class="form-note">Telegram will open with your message ready to send.</p>
                     </form>
                 </div>
             </div>
@@ -352,6 +353,26 @@
         if (menuButton && mobileNav) {
             menuButton.addEventListener('click', function () {
                 mobileNav.classList.toggle('hidden');
+            });
+        }
+
+        const contactForm = document.querySelector('.contact-form');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const formData = new FormData(contactForm);
+                const message = [
+                    `Name: ${formData.get('name')}`,
+                    `Email: ${formData.get('email')}`,
+                    '',
+                    formData.get('message')
+                ].join('\n');
+                const telegramUrl = new URL('https://t.me/pomirom');
+                telegramUrl.searchParams.set('text', message);
+
+                window.open(telegramUrl.toString(), '_blank', 'noopener,noreferrer');
             });
         }
     </script>
