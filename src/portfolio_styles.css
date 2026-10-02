@@ -47,7 +47,7 @@ textarea {
   font: inherit;
 }
 
-.container {
+.page-container {
   width: min(1100px, calc(100% - 96px));
   margin: 0 auto;
 }
@@ -632,7 +632,7 @@ textarea {
 }
 
 @media (max-width: 640px) {
-  .container {
+  .page-container {
     width: calc(100% - 48px);
   }
 
