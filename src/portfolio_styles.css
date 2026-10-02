@@ -48,7 +48,7 @@ textarea {
 }
 
 .container {
-  width: min(1100px, calc(100% - 64px));
+  width: min(1100px, calc(100% - 96px));
   margin: 0 auto;
 }
 
@@ -633,7 +633,7 @@ textarea {
 
 @media (max-width: 640px) {
   .container {
-    width: calc(100% - 36px);
+    width: calc(100% - 48px);
   }
 
   .menu-button {
